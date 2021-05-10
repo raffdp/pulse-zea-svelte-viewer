@@ -1,0 +1,36 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
+module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
+  purge: ['./src/**/*.svelte'],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#f9ce03',
+          light: '#fbe167',
+        },
+        secondary: {
+          DEFAULT: '#965cb8',
+          light: '#c09dd4',
+        },
+        background: {
+          DEFAULT: '#222222',
+          light: '#2d2d2d',
+        },
+        foreground: {
+          dark: '#aaaaaa',
+          DEFAULT: '#e0e0e0',
+        },
+      },
+      fontFamily: {
+        sans: [...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+  variants: {},
+  plugins: [],
+}
