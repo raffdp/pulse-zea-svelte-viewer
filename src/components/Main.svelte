@@ -202,7 +202,7 @@
 
     $assetLevelItems = []
 
-    const loadAsset = (url) => {
+    const loadZCADAsset = (url) => {
       const asset = new CADAsset()
 
       asset.on('error', (event) => {
@@ -235,9 +235,39 @@
       return asset
     }
 
+    const { GLTFAsset } = gltfLoader
+    const loadGLTFAsset = (url) => {
+      const asset = new GLTFAsset('gltf')
+      asset.load(url).then(() => {
+        console.log('Loading done')
+
+        const xfo = new Xfo() //asset.getParameter('LocalXfo').getValue()
+        if (urlParams.has('y2zup')) {
+          xfo.ori.setFromAxisAndAngle(new Vec3(1, 0, 0), Math.PI * 0.5)
+        }
+        const box = asset.getParameter('BoundingBox').getValue()
+        xfo.tr.z = -box.p0.z
+        asset.getParameter('LocalXfo').setValue(xfo)
+
+        const assetChildren = []
+        asset.getChildren().forEach((child) => assetChildren.push(child))
+        $assetLevelItems = assetChildren
+
+        renderer.frameAll()
+      })
+      $assets.addChild(asset)
+    }
+
+    const loadAsset = (url) => {
+      if (url.endsWith('zcad')) loadZCADAsset(url)
+      else if (url.endsWith('gltf') || url.endsWith('glb')) loadGLTFAsset(url)
+    }
+
     if (!embeddedMode) {
       assetUrl = urlParams.has('zcad')
         ? urlParams.get('zcad')
+        : urlParams.has('gltf')
+        ? urlParams.get('gltf')
         : '/data/gear_box_final_asm-visu.zcad'
 
       loadAsset(assetUrl)
