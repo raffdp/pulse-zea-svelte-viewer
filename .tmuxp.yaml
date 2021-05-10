@@ -1,0 +1,11 @@
+session_name: zea-template-collab
+suppress_history: false
+windows:
+  - layout: main-vertical
+    panes:
+      - yarn run dev
+      - ${EDITOR} -S
+  - panes:
+      - shell_command:
+          - git fetch
+          - git status
