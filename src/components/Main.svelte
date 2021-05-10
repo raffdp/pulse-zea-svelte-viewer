@@ -17,6 +17,8 @@
 
   import { APP_DATA } from '../stores/appData'
   import { assets } from '../stores/assets.js'
+  import { assetLevelItems } from '../stores/assetLevelItems.js'
+
   import { ui } from '../stores/ui.js'
   import { selectionManager } from '../stores/selectionManager.js'
   import { scene } from '../stores/scene.js'
@@ -198,6 +200,8 @@
     /** CAD START */
     // renderer.addPass(new GLCADPass())
 
+    $assetLevelItems = []
+
     const loadAsset = (url) => {
       const asset = new CADAsset()
 
@@ -205,7 +209,6 @@
         console.warn('Error:', event)
       })
 
-      
       asset.on('loaded', () => {
         const materials = asset.getMaterialLibrary().getMaterials()
         materials.forEach((material) => {
@@ -216,6 +219,10 @@
             material.setShaderName('StandardSurfaceShader')
           }
         })
+
+        const assetChildren = []
+        asset.getChildren().forEach((child) => assetChildren.push(child))
+        $assetLevelItems = assetChildren
       })
 
       asset.getGeometryLibrary().on('loaded', () => {

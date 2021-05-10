@@ -4,13 +4,13 @@
   import TreeView from '../components/TreeView.svelte'
 
   import { assets } from '../stores/assets.js'
+  import { assetLevelItems } from '../stores/assetLevelItems.js'
   import { selectionManager } from '../stores/selectionManager.js'
 
   const tabs = ['Assembly', 'Search']
 
   let selectedTab
-
-  $: treeItems = [$assets]
+  $: treeItems = $assetLevelItems ? $assetLevelItems : []
 </script>
 
 <div class="Sidebar h-full w-full flex flex-col">
