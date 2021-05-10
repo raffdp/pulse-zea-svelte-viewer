@@ -152,6 +152,9 @@
             <IconChevronRight />
           {/if}
         </button>
+      {:else}
+      <div class="w-8 md:w-6" >
+      </div>
       {/if}
 
       {#if isTreeItem}
