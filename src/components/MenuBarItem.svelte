@@ -9,6 +9,7 @@
   }
 
   window.addEventListener('click', (event) => {
+    if (!event.target.parentElement) return
     const aMenuItemDropDownIsTarget = event.target.parentElement.classList.contains(
       'MenuItemDropDown'
     )

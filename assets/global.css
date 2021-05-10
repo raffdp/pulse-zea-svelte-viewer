@@ -33,3 +33,7 @@ body,
 #routify-app {
   height: 100%;
 }
+
+.viewIconColoredFace {
+  fill: #f9ce03;
+}
