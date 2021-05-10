@@ -240,7 +240,7 @@
     }
     /** CAD END */
 
-    /** COLLAB START*/
+    /** COLLAB START* /
     if (!embeddedMode) {
       const SOCKET_URL = 'https://websocket-staging.zea.live'
       const roomId = assetUrl
