@@ -1,0 +1,9 @@
+node_modules/
+public/
+.DS_Store
+.history
+src/tmp/
+.routify
+.netlify
+assets/build/
+.vercel
