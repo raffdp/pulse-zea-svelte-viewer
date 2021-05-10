@@ -17,8 +17,10 @@
   import IconRenderModeShadedAndEdges from '../icons/IconRenderModeShadedAndEdges.svelte'
   import IconRenderModePBR from '../icons/IconRenderModePBR.svelte'
   import IconRenderModeHiddenLine from '../icons/IconRenderModeHiddenLine.svelte'
+  import IconTreeView from '../icons/IconTreeView.svelte'
 
   import { APP_DATA } from '../../stores/appData'
+  import { ui } from '../../stores/ui.js'
 
   const {
     Vec3,
@@ -31,6 +33,7 @@
     LinesProxy,
     Color,
   } = window.zeaEngine
+
 
   const setCameraXfo = (camera, dir, up) => {
     const sw = dir.cross(up).normalize()
@@ -283,6 +286,12 @@
     })
     mode = RENDER_MODES.PBR
   }
+
+  
+  
+  const handleClickMenuToggle = () => {
+    $ui.shouldShowDrawer = !$ui.shouldShowDrawer
+  }
 </script>
 
 <div class="Toolbar flex gap-1" class:flex-col={orientation === 'vertical'}>
@@ -352,4 +361,8 @@
       </ToolbarItem>
     </div>
   </ToolbarItemPopup>
+  
+  <ToolbarItem title="OpenTree" on:click={handleClickMenuToggle}>
+    <IconTreeView />
+  </ToolbarItem>
 </div>
