@@ -6,6 +6,8 @@
   import IconChevronDown from '../components/icons/IconChevronDown.svelte'
   import IconChevronRight from '../components/icons/IconChevronRight.svelte'
 
+  const { CADBody } = window.zeaCad
+
   export let isExpanded = false
   export let highlighted = false
   export let item
@@ -122,7 +124,9 @@
 
       // This code is for a special case when items are replaced in the
       // TreeView and we don't load the component again.
-      hasChildren = item.getNumChildren() > 0
+      hasChildren =
+        item.getNumChildren() > 0 &&
+        !(item.getName().includes('Body') || item.getName().includes('PMI')) // && item instanceof globalThis.zeaCad.CADBody
     }
 
     if (unsubHighlightChanged > -1) {
@@ -153,8 +157,7 @@
           {/if}
         </button>
       {:else}
-      <div class="w-8 md:w-6" >
-      </div>
+        <div class="w-8 md:w-6" />
       {/if}
 
       {#if isTreeItem}
