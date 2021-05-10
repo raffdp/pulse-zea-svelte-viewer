@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Zea Composer Viewer - Embed</title>
+
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" />
+    <link rel="stylesheet" href="./custo.css" />
+  </head>
+  <body>
+    <script type="module" src="./main-embed.js"></script>
+    <div id="leftpanel">
+      <div id="buttonWrapper">
+        <div class="btns">
+          <button class="btn" id="Gearbox">Gearbox</button>
+          <button class="btn" id="Hospital_Structural">
+            Hospital_Structural
+          </button>
+          <button class="btn" id="Hospital_HVAC">Hospital_HVAC</button>
+          <br />
+          <input type="color" id="background-color" value="#cccccc" />
+        </div>
+      </div>
+      <pre id="output"></pre>
+    </div>
+    <div id="rightpanel">
+      <!-- For local development 
+        <iframe
+        id="zea-svelte-app"
+        src="http://localhost:5005/?embedded"
+      ></iframe> -->
+      <iframe
+        id="zea-svelte-app"
+        src="https://zea-svelte-template.vercel.app/?embedded"
+      ></iframe>
+    </div>
+  </body>
+</html>
