@@ -34,7 +34,6 @@
     Color,
   } = window.zeaEngine
 
-
   const setCameraXfo = (camera, dir, up) => {
     const sw = dir.cross(up).normalize()
     const upNormalized = sw.cross(dir).normalize()
@@ -189,7 +188,7 @@
             // Note: Assigning the background color makes the surfaces
             // blend in with the background. Another option would be to
             // desaturate the current color.
-            newMaterial.getParameter('BaseColor').setValue(backgroundColor)
+            // newMaterial.getParameter('BaseColor').setValue(backgroundColor)
           }
         })
       }
@@ -223,9 +222,7 @@
               }
             } else {
               newMaterial.setShaderName('FlatSurfaceShader')
-              newMaterial
-                .getParameter('BaseColor')
-                .setValue(new Color(0.75, 0.75, 0.75))
+              // newMaterial.getParameter('BaseColor').setValue(backgroundColor)
             }
           }
         )
@@ -287,8 +284,6 @@
     mode = RENDER_MODES.PBR
   }
 
-  
-  
   const handleClickMenuToggle = () => {
     $ui.shouldShowDrawer = !$ui.shouldShowDrawer
   }
@@ -361,7 +356,7 @@
       </ToolbarItem>
     </div>
   </ToolbarItemPopup>
-  
+
   <ToolbarItem title="OpenTree" on:click={handleClickMenuToggle}>
     <IconTreeView />
   </ToolbarItem>

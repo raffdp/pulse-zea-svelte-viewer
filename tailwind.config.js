@@ -18,8 +18,8 @@ module.exports = {
           light: '#2D7CCD',
         },
         secondary: {
-          DEFAULT: '#965cb8',
-          light: '#c09dd4',
+          DEFAULT: '#3871c1',
+          light: '#2D7CCD',
         },
         background: {
           DEFAULT: '#222222',

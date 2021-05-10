@@ -36,6 +36,7 @@
     resourceLoader,
     SystemDesc,
     EnvMap,
+    CameraManipulator,
     NumberParameter,
     ColorParameter,
   } = window.zeaEngine
@@ -110,6 +111,9 @@
 
     /** SELECTION START */
     const cameraManipulator = renderer.getViewport().getManipulator()
+    cameraManipulator.setDefaultManipulationMode(
+      CameraManipulator.MANIPULATION_MODES.tumbler
+    )
     appData.cameraManipulator = cameraManipulator
     const toolManager = new ToolManager(appData)
     $selectionManager = new SelectionManager(appData, {
@@ -131,7 +135,7 @@
     appData.toolManager = toolManager
 
     // Note: the alpha value determines  the fill of the highlight.
-    const selectionColor = new Color('#F9CE03')
+    const selectionColor = new Color('#3871c1')
 
     selectionColor.a = 0.1
     const subtreeColor = selectionColor //.lerp(new Color(1, 1, 1, 0), 0.5)
@@ -167,19 +171,19 @@
       }
     })
 
-    let highlightedItem
-    renderer.getViewport().on('pointerOverGeom', (event) => {
-      highlightedItem = filterItemSelection(event.intersectionData.geomItem)
-      highlightedItem.addHighlight(
-        'pointerOverGeom',
-        new Color(1, 1, 1, 0.1),
-        true
-      )
-    })
-    renderer.getViewport().on('pointerLeaveGeom', (event) => {
-      highlightedItem.removeHighlight('pointerOverGeom', true)
-      highlightedItem = null
-    })
+    // let highlightedItem
+    // renderer.getViewport().on('pointerOverGeom', (event) => {
+    //   highlightedItem = filterItemSelection(event.intersectionData.geomItem)
+    //   highlightedItem.addHighlight(
+    //     'pointerOverGeom',
+    //     new Color(1, 1, 1, 0.1),
+    //     true
+    //   )
+    // })
+    // renderer.getViewport().on('pointerLeaveGeom', (event) => {
+    //   highlightedItem.removeHighlight('pointerOverGeom', true)
+    //   highlightedItem = null
+    // })
     renderer.getViewport().on('pointerDoublePressed', (event) => {
       console.log(event)
     })
