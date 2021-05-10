@@ -87,7 +87,7 @@
     $scene
       .getSettings()
       .getParameter('BackgroundColor')
-      .setValue(new Color(0.35, 0.35, 0.35, 1))
+      .setValue(new Color(0.85, 0.85, 0.85, 1))
     renderer.setScene($scene)
     renderer.getViewport().outlineThickness = 1.25
 
@@ -205,10 +205,7 @@
         console.warn('Error:', event)
       })
 
-      $scene
-        .getSettings()
-        .getParameter('BackgroundColor')
-        .setValue(new Color(0.75, 0.75, 0.75, 1))
+      
       asset.on('loaded', () => {
         const materials = asset.getMaterialLibrary().getMaterials()
         materials.forEach((material) => {

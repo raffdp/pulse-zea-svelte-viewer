@@ -84,7 +84,7 @@
       d="m8.084177 32.13528l67.18111 0l0 67.401566l-67.18111 0z"
       fill-rule="evenodd"
     /><path
-      fill="#f9ce03"
+      class="viewIconColoredFace"
       d="m29.262121 7.4483647l-22.749775 22.97511l68.47466 0.45067215l23.501457 -23.599335z"
       fill-rule="evenodd"
     /><path
@@ -184,7 +184,7 @@
       d="m7.2440944 32.136497l67.1811 0l0 68.28346l-67.1811 0z"
       fill-rule="evenodd"
     /><path
-      fill="#f9ce03"
+      class="viewIconColoredFace"
       d="m28.026247 8.291339l-21.895014 23.729656l68.14698 0.2939644l25.15223 -24.131233z"
       fill-rule="evenodd"
     /><path

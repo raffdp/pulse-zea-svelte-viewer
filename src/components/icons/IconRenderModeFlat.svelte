@@ -73,7 +73,7 @@
       d="m6.6742845 31.222435l23.11811 -23.11811l69.35433 0l0 69.35433l-23.11811 23.11811l-69.35433 0zm0 0l69.35433 0l23.11811 -23.11811m-23.11811 23.11811l0 69.35433"
       fill-rule="evenodd"
     /><path
-      fill="#f9ce03"
+      class="viewIconColoredFace"
       d="m7.8129287 32.24648l67.18111 0l0 67.40158l-67.18111 0z"
       fill-rule="evenodd"
     /><path
@@ -84,7 +84,7 @@
       d="m7.8129287 32.24648l67.18111 0l0 67.40158l-67.18111 0z"
       fill-rule="evenodd"
     /><path
-      fill="#f9ce03"
+      class="viewIconColoredFace"
       d="m28.990873 7.5595646l-22.749775 22.97511l68.47466 0.45067215l23.501457 -23.599335z"
       fill-rule="evenodd"
     /><path
@@ -95,7 +95,7 @@
       d="m28.990873 7.5595646l-22.749775 22.97511l68.47466 0.45067215l23.501457 -23.599335z"
       fill-rule="evenodd"
     /><path
-      fill="#f9ce03"
+      class="viewIconColoredFace"
       d="m75.39114 31.120354l0.42572784 69.36592l23.830978 -23.618652l0 -69.15306z"
       fill-rule="evenodd"
     /><path
