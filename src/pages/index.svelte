@@ -23,7 +23,7 @@
 
 {#if shouldShowLayout}
   <div class="flex flex-col h-full">
-    <Header />
+    <!-- <Header /> -->
     <Main />
   </div>
 {/if}
