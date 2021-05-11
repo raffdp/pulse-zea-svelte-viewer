@@ -51,37 +51,37 @@
     const { renderer } = $APP_DATA
     const camera = renderer.getViewport().getCamera()
     setCameraXfo(camera, new Vec3(0, 1, 0), new Vec3(0, 0, 1))
-    // camera.setIsOrthographic(1.0)
+    camera.setIsOrthographic(1.0)
   }
   const handleChangeViewBack = () => {
     const { renderer } = $APP_DATA
     const camera = renderer.getViewport().getCamera()
     setCameraXfo(camera, new Vec3(0, -1, 0), new Vec3(0, 0, 1))
-    // camera.setIsOrthographic(1.0)
+    camera.setIsOrthographic(1.0)
   }
   const handleChangeViewTop = () => {
     const { renderer } = $APP_DATA
     const camera = renderer.getViewport().getCamera()
     setCameraXfo(camera, new Vec3(0, 0, -1), new Vec3(0, 1, 0))
-    // camera.setIsOrthographic(1.0)
+    camera.setIsOrthographic(1.0)
   }
   const handleChangeViewBottom = () => {
     const { renderer } = $APP_DATA
     const camera = renderer.getViewport().getCamera()
     setCameraXfo(camera, new Vec3(0, 0, 1), new Vec3(0, -1, 0))
-    // camera.setIsOrthographic(1.0)
+    camera.setIsOrthographic(1.0)
   }
   const handleChangeViewLeft = () => {
     const { renderer } = $APP_DATA
     const camera = renderer.getViewport().getCamera()
     setCameraXfo(camera, new Vec3(1, 0, 0), new Vec3(0, 0, 1))
-    // camera.setIsOrthographic(1.0)
+    camera.setIsOrthographic(1.0)
   }
   const handleChangeViewRight = () => {
     const { renderer } = $APP_DATA
     const camera = renderer.getViewport().getCamera()
     setCameraXfo(camera, new Vec3(-1, 0, 0), new Vec3(0, 0, 1))
-    // camera.setIsOrthographic(1.0)
+    camera.setIsOrthographic(1.0)
   }
   const handleChangeViewPerspective = () => {
     const { renderer } = $APP_DATA
