@@ -93,6 +93,10 @@
       .setValue(new Color(0.85, 0.85, 0.85, 1))
     renderer.setScene($scene)
     renderer.getViewport().outlineThickness = 1.25
+    renderer
+      .getViewport()
+      .getCamera()
+      .setPositionAndTarget(new Vec3(1, -1, 1), new Vec3(0, 0, 0))
 
     const appData = {}
 
@@ -245,10 +249,8 @@
       asset.load(url).then(() => {
         console.log('Loading done')
 
-        const xfo = new Xfo() //asset.getParameter('LocalXfo').getValue()
-        if (urlParams.has('y2zup')) {
-          xfo.ori.setFromAxisAndAngle(new Vec3(1, 0, 0), Math.PI * 0.5)
-        }
+        const xfo = new Xfo()
+        xfo.ori.setFromAxisAndAngle(new Vec3(1, 0, 0), Math.PI * 0.5)
         const box = asset.getParameter('BoundingBox').getValue()
         xfo.tr.z = -box.p0.z
         asset.getParameter('LocalXfo').setValue(xfo)
