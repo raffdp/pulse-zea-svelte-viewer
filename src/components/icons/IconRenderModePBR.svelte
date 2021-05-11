@@ -1,6 +1,5 @@
 <script>
   export let design = ''
-  export let themeColor = '#f9ce03'
 </script>
 
 <svg
@@ -73,7 +72,7 @@
       d="m31.183187 7.0469313l0 69.57481"
       fill-rule="evenodd"
     /><path
-    class="viewIconFrontFace"
+      class="viewIconFrontFace"
       d="m8.084177 32.13528l67.18111 0l0 67.401566l-67.18111 0z"
       fill-rule="evenodd"
     /><path

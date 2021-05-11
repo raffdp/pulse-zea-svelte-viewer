@@ -1,6 +1,4 @@
 <script>
-  export let design = ''
-  export let themeColor = '#f9ce03'
 </script>
 
 <svg
