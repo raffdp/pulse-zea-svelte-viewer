@@ -52,6 +52,7 @@
     const camera = renderer.getViewport().getCamera()
     setCameraXfo(camera, new Vec3(0, 1, 0), new Vec3(0, 0, 1))
     camera.setIsOrthographic(1.0)
+    renderer.frameAll()
   }
   const handleChangeViewBack = () => {
     const { renderer } = $APP_DATA

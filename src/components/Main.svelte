@@ -245,6 +245,7 @@
 
     const { GLTFAsset } = gltfLoader
     const loadGLTFAsset = (url) => {
+      console.log('test')
       const asset = new GLTFAsset('gltf')
       asset.load(url).then(() => {
         console.log('Loading done')
@@ -265,8 +266,9 @@
     }
 
     const loadAsset = (url) => {
-      if (url.endsWith('zcad')) loadZCADAsset(url)
-      else if (url.endsWith('gltf') || url.endsWith('glb')) loadGLTFAsset(url)
+      if (url.endsWith('zcad')) return loadZCADAsset(url)
+      else if (url.endsWith('gltf') || url.endsWith('glb')) return loadGLTFAsset(url)
+      // else throw new Exception('Unable to load asset ' + url)
     }
 
     if (!embeddedMode) {
@@ -307,6 +309,13 @@
     /** EMBED MESSAGING START*/
     if (embeddedMode) {
       const client = createClient()
+      
+      client.on('takeScreenshot', (data) => {
+        console.log('screenshot taken');
+        const canvas = renderer.getGLCanvas();
+        const dataUrl = canvas.toDataURL("image/png");
+        client.send("Screenshot", {dataUrl});
+      })
 
       client.on('setBackgroundColor', (data) => {
         const color = new Color(data.color)
