@@ -263,6 +263,9 @@
         renderer.frameAll()
       })
       $assets.addChild(asset)
+      // asset.getParameter('FilePath').setValue(url)
+
+      return asset
     }
 
     const loadAsset = (url) => {
@@ -314,10 +317,12 @@
         console.log('screenshot taken');
         const canvas = renderer.getGLCanvas();
         const dataUrl = canvas.toDataURL("image/png");
-        client.send("Screenshot", {dataUrl});
+        console.log('data id ' + data._id);
+        client.send(data._id, {dataUrl});
       })
 
       client.on('setBackgroundColor', (data) => {
+        console.log("color "  + data.color)
         const color = new Color(data.color)
         $scene.getSettings().getParameter('BackgroundColor').setValue(color)
 
