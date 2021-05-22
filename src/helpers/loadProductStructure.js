@@ -10,8 +10,12 @@ function checkStatus(response) {
 }
 
 export function loadProductStructure(url) {
-  const folder = url.lastIndexOf('/') > -1 ? url.substring(0, url.lastIndexOf('/')) + '/' : ''
-  const filename = url.lastIndexOf('/') > -1 ? url.substring(url.lastIndexOf('/') + 1) : ''
+  const folder =
+    url.lastIndexOf('/') > -1
+      ? url.substring(0, url.lastIndexOf('/')) + '/'
+      : ''
+  const filename =
+    url.lastIndexOf('/') > -1 ? url.substring(url.lastIndexOf('/') + 1) : ''
   const stem = filename.substring(0, filename.lastIndexOf('.'))
 
   const productStructure = new TreeItem('ProductStructure')
@@ -23,7 +27,9 @@ export function loadProductStructure(url) {
     .then((response) => {
       resourceLoader.incrementWorkDone(1) // load complete
       if (!checkStatus(response))
-        throw new Error(`Unable to load Product Structure: ${url}. ${response.status} - ${response.statusText}`)
+        throw new Error(
+          `Unable to load Product Structure: ${url}. ${response.status} - ${response.statusText}`
+        )
       return response.json()
     })
     .then((json) => {
@@ -92,7 +98,24 @@ export function loadProductStructure(url) {
       const mat4 = new Mat4()
       const d = json.matrix
       // mat4.set(d[0], d[1], d[2], 1, d[3], d[4], d[5], 1, d[6], d[7], d[8], 1, d[9], d[10], d[11], 1)
-      mat4.set(d[0], d[1], d[2], d[3], d[4], d[5], d[6], d[7], d[8], d[9], d[10], d[11], 0, 0, 0, 0)
+      mat4.set(
+        d[0],
+        d[1],
+        d[2],
+        d[3],
+        d[4],
+        d[5],
+        d[6],
+        d[7],
+        d[8],
+        d[9],
+        d[10],
+        d[11],
+        0,
+        0,
+        0,
+        0
+      )
       mat4.transposeInPlace()
       const xfo = new Xfo()
       xfo.setFromMat4(mat4)

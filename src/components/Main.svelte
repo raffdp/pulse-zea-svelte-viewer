@@ -270,7 +270,8 @@
 
     const loadAsset = (url) => {
       if (url.endsWith('zcad')) return loadZCADAsset(url)
-      else if (url.endsWith('gltf') || url.endsWith('glb')) return loadGLTFAsset(url)
+      else if (url.endsWith('gltf') || url.endsWith('glb'))
+        return loadGLTFAsset(url)
       // else throw new Exception('Unable to load asset ' + url)
     }
 
@@ -312,17 +313,17 @@
     /** EMBED MESSAGING START*/
     if (embeddedMode) {
       const client = createClient()
-      
+
       client.on('takeScreenshot', (data) => {
-        console.log('screenshot taken');
-        const canvas = renderer.getGLCanvas();
-        const dataUrl = canvas.toDataURL("image/png");
-        console.log('data id ' + data._id);
-        client.send(data._id, {dataUrl});
+        console.log('screenshot taken')
+        const canvas = renderer.getGLCanvas()
+        const dataUrl = canvas.toDataURL('image/png')
+        console.log('data id ' + data._id)
+        client.send(data._id, { dataUrl })
       })
 
       client.on('setBackgroundColor', (data) => {
-        console.log("color "  + data.color)
+        console.log('color ' + data.color)
         const color = new Color(data.color)
         $scene.getSettings().getParameter('BackgroundColor').setValue(color)
 

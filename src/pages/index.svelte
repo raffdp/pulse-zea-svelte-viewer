@@ -11,12 +11,12 @@
 
   onMount(async () => {
     const isAuthenticated = await auth.isAuthenticated()
-console.log('abc')
+    console.log('abc')
     if (isAuthenticated) {
       shouldShowLayout = true
     } else {
       const params = new URLSearchParams(location.search)
-       $redirect('/login?' + params.toString())
+      $redirect('/login?' + params.toString())
     }
   })
 </script>
