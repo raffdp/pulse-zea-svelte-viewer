@@ -13,8 +13,6 @@
   import ProgressBar from '../components/ProgressBar.svelte'
   import Sidebar from '../components/Sidebar.svelte'
 
-  import { auth } from '../helpers/auth'
-
   import { APP_DATA } from '../stores/appData'
   import { assets } from '../stores/assets.js'
   import { assetLevelItems } from '../stores/assetLevelItems.js'
